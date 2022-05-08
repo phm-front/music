@@ -1,8 +1,13 @@
 // import React from 'react';
+import fetch from '@/service'
+import { useEffect } from 'react';
 
-function App() {
+const App = () => {
+  useEffect(() => {
+    console.log(fetch);
+  })
   return (
-    <div className="App">
+    <div>
       hello react
     </div>
   );
