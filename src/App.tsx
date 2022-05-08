@@ -1,16 +1,24 @@
 // import React from 'react';
-import fetch from '@/service'
-import { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { Dispatch } from 'redux';
+import { addAction } from './store/main/actionCreators';
+import { ReduxState } from './store/types';
 
-const App = () => {
-  useEffect(() => {
-    console.log(fetch);
-  })
+const App = (props) => {
   return (
     <div>
-      hello react
+      <div className="count">{ props.count }</div>
+      <button onClick={ props.addCount }>+10</button>
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = (state: ReduxState) => ({
+  count: state.mainStore.count
+})
+const mapActionToProps = (dispatch: Dispatch) => ({
+  addCount: () => {
+    dispatch(addAction(10))
+  }
+})
+export default connect(mapStateToProps, mapActionToProps)(App);
