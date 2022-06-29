@@ -1,5 +1,5 @@
-import { MainState } from './main/types'
+import { RecommendState } from './recommend/types'
 
 export interface ReduxState {
-  mainStore: MainState
+  recommendStore: RecommendState
 }

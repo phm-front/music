@@ -2,6 +2,9 @@ import styled from 'styled-components';
 
 export const TopBarWrapper = styled.div`
   font-size: 14px;
+  a {
+    color: #ccc;
+  }
   a:hover,
   .active {
     background-color: #000;

@@ -47,31 +47,31 @@ class MyRequest {
     )
   }
 
-  request(config: AxiosRequestConfig): Promise<unknown> {
+  request(config: AxiosRequestConfig): Promise<any> {
     return new Promise((resolve, reject) => {
       this.instance
         .request(config)
         .then((res) => {
-          resolve(res)
+          resolve(res.data)
         })
         .catch((err) => {
           reject(err)
         })
     })
   }
-  get(config: AxiosRequestConfig): Promise<unknown> {
+  get(config: AxiosRequestConfig): Promise<any> {
     return this.request({ ...config, method: 'GET' })
   }
 
-  post(config: AxiosRequestConfig): Promise<unknown> {
+  post(config: AxiosRequestConfig): Promise<any> {
     return this.request({ ...config, method: 'POST' })
   }
 
-  delete(config: AxiosRequestConfig): Promise<unknown> {
+  delete(config: AxiosRequestConfig): Promise<any> {
     return this.request({ ...config, method: 'DELETE' })
   }
 
-  patch(config: AxiosRequestConfig): Promise<unknown> {
+  patch(config: AxiosRequestConfig): Promise<any> {
     return this.request({ ...config, method: 'PATCH' })
   }
 }

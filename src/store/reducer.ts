@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import { reducer as mainReducer } from '@/store/main'
+import { reducer as recommendReducer } from '@/store/recommend'
 
 const reducer = combineReducers({
-  mainStore: mainReducer
+  recommendStore: recommendReducer
 })
 
 export default reducer

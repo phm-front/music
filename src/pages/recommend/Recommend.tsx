@@ -1,9 +1,11 @@
-import React, { memo } from 'react'
+import React, { memo } from "react";
+import { RecommendWrapper } from "./style";
+import TopBanners from './components/TopBanners';
 
-export default memo(function Recommend() {
+export default memo(() => {
   return (
-    <div>
-      推荐
-    </div>
-  )
-})
+    <RecommendWrapper>
+      <TopBanners />
+    </RecommendWrapper>
+  );
+});
