@@ -13,7 +13,7 @@ export default memo<{
     <SectionTopBarWrapper className="h-[35px] flex justify-between items-center">
       <div className="flex items-center">
         <img width="16" height="16" src={require("@/assets/images/ring.png")} alt="" />
-        <span className="text-[20px] leading-[28px] ml-[10px]">{title}</span>
+        <NavLink to={moreUrl} className="text-[20px] text-[#333] hover:text-[#333] leading-[28px] ml-[10px] cursor-pointer">{title}</NavLink>
         {navList && (
           <div className="a-color pl-[10px]">
             {navList.map((item, index) => {

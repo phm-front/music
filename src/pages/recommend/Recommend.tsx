@@ -8,7 +8,7 @@ export default memo(() => {
     <RecommendWrapper>
       <TopBanners />
       <div className="flex justify-center bg-[#f5f5f5]">
-        <div className="w-[980px] bg-[#fff] border-[#d3d3d3] border-[1px] border-solid flex">
+        <div className="w-[980px] shrink-0 bg-[#fff] border-[#d3d3d3] border-[1px] border-solid flex">
           <div className="flex-1 px-[20px] pt-[20px] pb-[40px]">
             <HotRecommend />
           </div>

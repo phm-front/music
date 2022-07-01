@@ -2,10 +2,14 @@ import React, { memo } from "react";
 import { useMemo } from "react";
 
 import SectionTopBar from "@/pages/recommend/common/sectionTopBar/SectionTopBar";
+import PlayListModule from '@/pages/recommend/common/playListModule/PlayListModule';
 import { getHotRecommendRq } from '@/api/discover/recommend';
 import { useEffect } from "react";
+import { useState } from "react";
 
 export default memo(function HotRecommend() {
+  const [recommendList, setRecommendList] = useState([])
+
   const navList = useMemo(() => [
     { name: "华语", url: "/discover/playlist?cat=华语" },
     { name: "流行", url: "/discover/playlist?cat=流行" },
@@ -16,14 +20,20 @@ export default memo(function HotRecommend() {
 
   useEffect(() => {
     getHotRecommendRq({ limit: 8 }).then(res => {
-      console.log(res);
+      if (res.code === 200) {
+        setRecommendList(res.result)
+      }
     })
   }, [])
 
   return (
     <div>
       <SectionTopBar title="热门推荐" moreUrl="/discover/playlist" navList={navList} />
-      热门推荐
+      <div className="flex flex-wrap justify-between">
+        {
+          recommendList.map(item => <PlayListModule cn="mt-[20px]" info={item} key={item.id} />)
+        }
+      </div>
     </div>
   );
 });
