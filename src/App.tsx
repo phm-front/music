@@ -1,4 +1,6 @@
 // import React from 'react';
+import { BackTop } from 'antd';
+
 import { useRoutesConfig } from "./hooks/useRoutes";
 
 import './assets/css/index.css';
@@ -10,6 +12,7 @@ const App = () => {
     <div>
       <Topbar />
       {element}
+      <BackTop duration={200} />
     </div>
   );
 };

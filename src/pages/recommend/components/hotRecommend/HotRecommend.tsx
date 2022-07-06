@@ -27,13 +27,13 @@ export default memo(function HotRecommend() {
   }, [])
 
   return (
-    <div>
+    <>
       <SectionTopBar title="热门推荐" moreUrl="/discover/playlist" navList={navList} />
       <div className="flex flex-wrap justify-between">
         {
           recommendList.map(item => <PlayListModule cn="mt-[20px]" info={item} key={item.id} />)
         }
       </div>
-    </div>
+    </>
   );
 });
