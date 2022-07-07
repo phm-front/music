@@ -3,6 +3,7 @@ import { RecommendWrapper } from "./style";
 import TopBanners from './components/topBanner/TopBanners';
 import HotRecommend from './components/hotRecommend/HotRecommend';
 import NewAlbum from './components/newAlbum/NewAlbum';
+import Leaderboard from './components/leaderboard/Leaderboard';
 
 export default memo(() => {
   return (
@@ -15,6 +16,8 @@ export default memo(() => {
             <HotRecommend />
             {/* 新碟上架 */}
             <NewAlbum />
+            {/* 榜单 */}
+            <Leaderboard />
           </div>
           <div className="right-section w-[248px]"></div>
         </div>
